@@ -1,4 +1,4 @@
-package com.mycompany.test1;
+package com.mycompany.test1; //chanage your own package
 
 public class Test1 {
 
