@@ -1,4 +1,4 @@
-package com.mycompany.test1; //chanage your own package
+package com.mycompany.test1; //change your own package
 
 public class Test1 {
 
