@@ -1,5 +1,10 @@
-public class Main {
+
+
+package com.mycompany.test1;
+
+public class Test1 {
+
     public static void main(String[] args) {
-        // To be edited
+        System.out.println("Hi catssss");
     }
 }
