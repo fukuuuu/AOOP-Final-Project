@@ -1,3 +1,5 @@
+package Home;
+
 import java.sql.*;
 import net.proteanit.sql.DbUtils;
 //import java.util.Logging.Level;
@@ -17,7 +19,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         
         initComponents();
-        con=DBConnection.ConnectDB();
+        con=DBConnection.connectDB("events");
         showEventsTable();
     }
    
@@ -34,7 +36,7 @@ public class Menu extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
@@ -302,37 +304,37 @@ public class Menu extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void MemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemButtonActionPerformed
+    private void MemButtonActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-    }//GEN-LAST:event_MemButtonActionPerformed
+    }                                         
 
-    private void plusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusButtonActionPerformed
+    private void plusButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
         EventCreator ev = new EventCreator();
         ev.show();
         
         dispose();
-    }//GEN-LAST:event_plusButtonActionPerformed
+    }                                          
 
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
         Login_Form logout = new Login_Form();
         logout.show();
         
         dispose();
-    }//GEN-LAST:event_backButtonActionPerformed
+    }                                          
 
-    private void txtLeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLeaderActionPerformed
+    private void txtLeaderActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtLeaderActionPerformed
+    }                                         
 
-    private void txtDescriptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescriptActionPerformed
+    private void txtDescriptActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDescriptActionPerformed
+    }                                           
 
-    private void eventTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventTableMouseClicked
+    private void eventTableMouseClicked(java.awt.event.MouseEvent evt) {                                        
         try {
     // TODO add your handling code here:
             int row = eventTable.getSelectedRow();
@@ -352,17 +354,18 @@ public class Menu extends javax.swing.JFrame {
                 txtLocation.setText(add2);
                 txtDate.setText(add3);
                 txtTime.setText(add4);
-                txtParticipant.setText(add5);
-                txtDescript.setText(add6);
+                txtDescript.setText(add5);
+                txtParticipant.setText(add6);
+                
             }
         } catch (Exception e) {
             System.out.println(e.getMessage()); 
         }
-    }//GEN-LAST:event_eventTableMouseClicked
+    }                                       
 
-    private void joinButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinButton1ActionPerformed
+    private void joinButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-    }//GEN-LAST:event_joinButton1ActionPerformed
+    }                                           
 
     /**
      * @param args the command line arguments
@@ -403,7 +406,7 @@ public class Menu extends javax.swing.JFrame {
     }
            
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton MemButton;
     private javax.swing.JButton backButton;
     private javax.swing.JTable eventTable;
@@ -427,5 +430,5 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtLocation;
     private javax.swing.JTextField txtParticipant;
     private javax.swing.JTextField txtTime;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
