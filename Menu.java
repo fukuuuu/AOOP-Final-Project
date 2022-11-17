@@ -360,8 +360,9 @@ public class Menu extends javax.swing.JFrame {
                 txtLocation.setText(add2);
                 txtDate.setText(add3);
                 txtTime.setText(add4);
-                txtParticipant.setText(add5);
-                txtDescript.setText(add6);
+                txtDescript.setText(add5);
+                txtParticipant.setText(add6);
+                
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
