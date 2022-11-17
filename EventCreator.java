@@ -298,7 +298,7 @@ public class EventCreator extends javax.swing.JFrame {
         if(dbconn != null) {
         try {
             PreparedStatement st  = (PreparedStatement) 
-            dbconn.prepareStatement("INSERT INTO eventdetails (event, leader, location, date, time,description,participant) VALUES(?,?,?,?,?,?,?)");
+            dbconn.prepareStatement("INSERT INTO eventdetails (event, leader, location, date, time, description, participant) VALUES(?,?,?,?,?,?,?)");
             st.setString(1, ename); 
             st.setString(2,lname) ;
             st.setString(3, loname); 
@@ -315,8 +315,9 @@ public class EventCreator extends javax.swing.JFrame {
             locateName.setText("");
             dateN.setText("");
             timeN.setText("");
-            participantNo.setText("");
             descriptInput.setText("");
+            participantNo.setText("");
+            
 
         } catch (Exception e) {
             Logger.getLogger(EventCreator.class.getName()).log(Level.SEVERE, null, e);
@@ -333,9 +334,10 @@ public class EventCreator extends javax.swing.JFrame {
         String LoName = locateName.getText();
         String DName = dateN.getText();
         String TName = timeN.getText();
+        String DesInput = descriptInput.getText();
         String PNo = participantNo.getText();
         
-        String DesInput = descriptInput.getText();
+        
         
         //System.out.println(Country) ;
         
