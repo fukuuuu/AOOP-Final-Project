@@ -21,7 +21,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         
         initComponents();
-        setSize(950, 530);
+        setSize(950, 560);
         setLocation(500, 250);
         con=DBConnection.connectDB("events");
         showEventsTable();
@@ -93,7 +93,7 @@ public class Menu extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(930, 460));
         setSize(new java.awt.Dimension(930, 460));
 
-        jPanel1.setBackground(new java.awt.Color(57, 180, 251));
+        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(950, 550));
 
         MenuBackground.setBackground(new java.awt.Color(251, 221, 92));
@@ -105,6 +105,7 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(255, 51, 51));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
+        eventTable.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         eventTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -328,13 +329,23 @@ public class Menu extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("participants");
 
+        txtLeader.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtLeader.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLeaderActionPerformed(evt);
             }
         });
 
+        txtLocation.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+
+        txtDate.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+
+        txtTime.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+
+        txtParticipant.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+
         descriptArea.setColumns(20);
+        descriptArea.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         descriptArea.setRows(5);
         jScrollPane2.setViewportView(descriptArea);
 
@@ -400,7 +411,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelRound2Layout.createSequentialGroup()
                         .addComponent(jLabel11)
-                        .addGap(0, 74, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
         );
@@ -541,7 +552,7 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(panelRound6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(panelRound8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -554,9 +565,7 @@ public class Menu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
