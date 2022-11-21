@@ -22,6 +22,7 @@ public class Menu extends javax.swing.JFrame {
         
         initComponents();
         setSize(950, 530);
+        setLocation(500, 250);
         con=DBConnection.connectDB("events");
         showEventsTable();
     }
