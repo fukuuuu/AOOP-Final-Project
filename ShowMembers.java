@@ -152,7 +152,7 @@ public class ShowMembers extends javax.swing.JFrame {
         backButton.setBackground(new java.awt.Color(144, 210, 235));
         backButton.setFont(new java.awt.Font("Segoe UI Black", 1, 40)); // NOI18N
         backButton.setForeground(new java.awt.Color(255, 255, 255));
-        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home_png/backRe.png"))); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home_png/arrow.png"))); // NOI18N
         backButton.setBorder(null);
         backButton.setBorderPainted(false);
         backButton.setContentAreaFilled(false);
