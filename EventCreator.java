@@ -240,7 +240,7 @@ public class EventCreator extends javax.swing.JFrame {
         panelRound4.setRoundTopLeft(50);
         panelRound4.setRoundTopRight(50);
 
-        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home_png/arrow.png"))); // NOI18N
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home_png/arrowRe.png"))); // NOI18N
         back.setBackground(new java.awt.Color(153, 204, 255));
         back.setBorder(null);
         back.setBorderPainted(false);
@@ -278,7 +278,7 @@ public class EventCreator extends javax.swing.JFrame {
         panelRound5.setRoundTopLeft(50);
         panelRound5.setRoundTopRight(50);
 
-        createButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home_png/check.png"))); // NOI18N
+        createButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home_png/checkRe.png"))); // NOI18N
         createButton.setBackground(new java.awt.Color(153, 204, 255));
         createButton.setBorder(null);
         createButton.setContentAreaFilled(false);
