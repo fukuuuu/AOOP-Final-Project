@@ -50,8 +50,9 @@ public class EventCreator extends javax.swing.JFrame {
         participantNo = new javax.swing.JTextField();
         eventName = new javax.swing.JTextField();
         leaderName = new javax.swing.JTextField();
-        timeN = new com.github.lgooddatepicker.components.TimePicker();
         dateN = new com.github.lgooddatepicker.components.DatePicker();
+        hourBox = new javax.swing.JComboBox<>();
+        minuteBox = new javax.swing.JComboBox<>();
         panelRound3 = new Home.PanelRound();
         jScrollPane2 = new javax.swing.JScrollPane();
         descriptInput = new javax.swing.JTextField();
@@ -128,6 +129,10 @@ public class EventCreator extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
 
+        hourBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
+
+        minuteBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
+
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);
         panelRound2Layout.setHorizontalGroup(
@@ -145,14 +150,16 @@ public class EventCreator extends javax.swing.JFrame {
                             .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(35, 35, 35)
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(locateName, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
-                        .addComponent(participantNo))
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(locateName)
+                    .addComponent(participantNo)
                     .addComponent(eventName, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(leaderName, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dateN, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(timeN, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRound2Layout.createSequentialGroup()
+                        .addComponent(hourBox, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(minuteBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         panelRound2Layout.setVerticalGroup(
@@ -184,9 +191,10 @@ public class EventCreator extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
                         .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(timeN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hourBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(minuteBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(participantNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -380,22 +388,23 @@ public class EventCreator extends javax.swing.JFrame {
         m.setVisible(true);
     }                                    
 
-    private void userCreateEvent(String ename, String lname, String loname, String dname, String pno, String desIn, String parti, String mem)  {
+    private void userCreateEvent(String ename, String lname, String loname, String dname, String time, String desIn, String parti, String l2name, String fTime)  {
         Connection dbconn = DBConnection.connectDB("events"); 
         //user_extended memb = new user_extended();
         //String user_Fname = memb.users.get(0).Fname ; 
         if(dbconn != null) {
         try {
             PreparedStatement st  = (PreparedStatement) 
-            dbconn.prepareStatement("INSERT INTO eventdetails (event, leader, location, date, time, description, participant, members) VALUES(?,?,?,?,?,?,?,?)");
+            dbconn.prepareStatement("INSERT INTO eventdetails (event, leader, location, date, time, description, participant, members, fullTime) VALUES(?,?,?,?,?,?,?,?,?)");
             st.setString(1, ename); 
             st.setString(2,lname) ;
             st.setString(3, loname); 
             st.setString(4,dname) ;
-            st.setString(5, pno);
+            st.setString(5, time);
             st.setString(6, desIn); 
             st.setString(7, parti); 
-            st.setString(8, lname);
+            st.setString(8, l2name);
+            st.setString(9, fTime);
 
             int res = st.executeUpdate(); 
             JOptionPane.showMessageDialog(this, "User data inserted", "Success", JOptionPane.INFORMATION_MESSAGE); 
@@ -404,11 +413,12 @@ public class EventCreator extends javax.swing.JFrame {
             leaderName.setText(""); 
             locateName.setText("");
             dateN.setText("");
-            timeN.setText("");
+            //timeN.setText("");
+            hourBox.setSelectedIndex(0);
+            minuteBox.setSelectedIndex(0);
             descriptInput.setText("");
             participantNo.setText("");
             
-
         } catch (Exception e) {
             Logger.getLogger(EventCreator.class.getName()).log(Level.SEVERE, null, e);
         } 
@@ -423,20 +433,26 @@ public class EventCreator extends javax.swing.JFrame {
         //user_extended memb = new user_extended();
         //String user_Fname = memb.users.get(0).Fname ; 
         
+        String hour = hourBox.getSelectedItem().toString();
+        String minute = minuteBox.getSelectedItem().toString();
+        String time = hour+":"+minute;
+        String date = EventCreator.dateN.getText();
+        String fTime = date +" "+hour+":"+minute;
+        
         String EName = eventName.getText();
         String LName = leaderName.getText();
         String L2Name = leaderName.getText();
         String LoName = locateName.getText();
         String DName = dateN.getText();
-        String TName = timeN.getText();
+        //String TName = timeN.getText();
         String DesInput = descriptInput.getText();
         String PNo = participantNo.getText();     
              
         
-        if(EName.isEmpty() || LName.isEmpty() || LoName.isEmpty() || DName.isEmpty() || TName.isEmpty() || PNo.isEmpty()|| DesInput.isEmpty())
+        if(EName.isEmpty() || LName.isEmpty() || LoName.isEmpty() || DName.isEmpty() || time.isEmpty() || PNo.isEmpty()|| DesInput.isEmpty())
             JOptionPane.showMessageDialog(this, "Please fill all information properly","Error", JOptionPane.ERROR_MESSAGE) ;
         else {
-            userCreateEvent(EName,LName,LoName,DName, TName,DesInput, PNo, L2Name); 
+            userCreateEvent(EName,LName,LoName,DName,time,DesInput,PNo,L2Name,fTime); 
         } 
     }                                            
 
@@ -484,9 +500,10 @@ public class EventCreator extends javax.swing.JFrame {
     private javax.swing.JButton back;
     private javax.swing.JButton createButton;
     private javax.swing.JLabel dateLabel;
-    private com.github.lgooddatepicker.components.DatePicker dateN;
+    public static com.github.lgooddatepicker.components.DatePicker dateN;
     private javax.swing.JTextField descriptInput;
     private javax.swing.JTextField eventName;
+    public static javax.swing.JComboBox<String> hourBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -500,6 +517,7 @@ public class EventCreator extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField leaderName;
     private javax.swing.JTextField locateName;
+    public static javax.swing.JComboBox<String> minuteBox;
     private Home.PanelRound panelRound1;
     private Home.PanelRound panelRound2;
     private Home.PanelRound panelRound3;
@@ -507,6 +525,5 @@ public class EventCreator extends javax.swing.JFrame {
     private Home.PanelRound panelRound5;
     private javax.swing.JTextField participantNo;
     private javax.swing.JLabel timeLabel;
-    private com.github.lgooddatepicker.components.TimePicker timeN;
     // End of variables declaration                   
 }
