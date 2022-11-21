@@ -1,10 +1,12 @@
 package Home;
 
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import net.proteanit.sql.DbUtils;
 import javax.swing.JOptionPane;
-//import java.util.Logging.Level;
-//import java.util.Logging.Logger;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -18,13 +20,47 @@ public class Menu extends javax.swing.JFrame {
     private Connection con = null;
     private ResultSet rs = null;
     
-    public Menu() {
-        
+    public Menu() {       
         initComponents();
         setSize(950, 560);
         setLocation(500, 250);
         con=DBConnection.connectDB("events");
         showEventsTable();
+        eventEli();
+    }
+    
+    public void eventEli() { 
+        try {
+            
+            String hour = EventCreator.hourBox.getSelectedItem().toString();
+            String minute = EventCreator.minuteBox.getSelectedItem().toString();
+            String time = hour+":"+minute;
+            String date = EventCreator.dateN.getText();
+            String fTime = date+" "+hour+":"+minute;
+
+            Date dt = new Date();
+            SimpleDateFormat dateFormat;
+            dateFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm");
+            dateFormat.toString();
+
+            Connection dbconn = DBConnection.connectDB("events"); 
+            String sql = "DELETE FROM eventdetails" + "WHERE fullTime = " + "November 22, 2022 02:47"+";";
+
+            pst=con.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery(sql);
+            
+            
+            /*
+            while (rs.next()) {
+                String c1 = rs.getString("fullTime");
+                if (c1.equals(dateFormat.toString())) {
+                    dbconn.prepareStatement("DELETE FROM eventdetails WHERE fullTime ="+c1);
+                }             
+            }
+            */
+        } catch (Exception e) {
+            System.out.println(e.getMessage()); 
+        }
     }
    
     public void showEventsTable(){
