@@ -107,10 +107,11 @@ public class ShowMembers extends javax.swing.JFrame {
 
         MemArea.setColumns(20);
         MemArea.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        MemArea.setForeground(new java.awt.Color(102, 102, 102));
         MemArea.setRows(5);
         jScrollPane3.setViewportView(MemArea);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("MEMBERS");
 
@@ -125,7 +126,7 @@ public class ShowMembers extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MemBackgroundLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(101, 101, 101))
+                .addGap(95, 95, 95))
         );
         MemBackgroundLayout.setVerticalGroup(
             MemBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
