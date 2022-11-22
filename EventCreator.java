@@ -44,12 +44,10 @@ public class EventCreator extends javax.swing.JFrame {
         dateLabel = new javax.swing.JLabel();
         timeLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         locateName = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         participantNo = new javax.swing.JTextField();
         eventName = new javax.swing.JTextField();
-        leaderName = new javax.swing.JTextField();
         dateN = new com.github.lgooddatepicker.components.DatePicker();
         hourBox = new javax.swing.JComboBox<>();
         minuteBox = new javax.swing.JComboBox<>();
@@ -101,37 +99,48 @@ public class EventCreator extends javax.swing.JFrame {
 
         jLabel6.setText("location");
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
 
         dateLabel.setText("date");
         dateLabel.setBackground(new java.awt.Color(255, 255, 255));
-        dateLabel.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
+        dateLabel.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         dateLabel.setForeground(new java.awt.Color(255, 255, 255));
 
         timeLabel.setText("time");
         timeLabel.setBackground(new java.awt.Color(255, 255, 255));
-        timeLabel.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
+        timeLabel.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         timeLabel.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setText("event");
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setText("leader");
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        locateName.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        locateName.setForeground(new java.awt.Color(102, 102, 102));
 
         jLabel7.setText("participant(s)");
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
 
+        participantNo.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        participantNo.setForeground(new java.awt.Color(102, 102, 102));
+
+        eventName.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        eventName.setForeground(new java.awt.Color(102, 102, 102));
+
+        dateN.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        dateN.setForeground(new java.awt.Color(102, 102, 102));
+
         hourBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
+        hourBox.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        hourBox.setForeground(new java.awt.Color(102, 102, 102));
 
         minuteBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
+        minuteBox.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        minuteBox.setForeground(new java.awt.Color(102, 102, 102));
 
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);
@@ -141,25 +150,23 @@ public class EventCreator extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelRound2Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(35, 35, 35)
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(locateName)
-                    .addComponent(participantNo)
-                    .addComponent(eventName, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(leaderName, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dateN, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addComponent(hourBox, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(minuteBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(hourBox, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(minuteBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(locateName)
+                        .addComponent(participantNo)
+                        .addComponent(eventName, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dateN, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         panelRound2Layout.setVerticalGroup(
@@ -172,31 +179,20 @@ public class EventCreator extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(eventName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addComponent(leaderName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(locateName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addComponent(dateN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
-                        .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(hourBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(minuteBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(timeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(locateName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dateN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hourBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(minuteBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(participantNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -206,6 +202,8 @@ public class EventCreator extends javax.swing.JFrame {
         panelRound3.setBackground(new java.awt.Color(251, 206, 91));
         panelRound3.setRoundTopLeft(100);
 
+        descriptInput.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        descriptInput.setForeground(new java.awt.Color(102, 102, 102));
         descriptInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 descriptInputActionPerformed(evt);
@@ -215,7 +213,7 @@ public class EventCreator extends javax.swing.JFrame {
 
         jLabel8.setText("description");
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
@@ -389,7 +387,7 @@ public class EventCreator extends javax.swing.JFrame {
         m.setVisible(true);
     }                                    
 
-    private void userCreateEvent(String ename, String lname, String loname, String dname, String time, String desIn, String parti, String l2name, String fTime)  {
+    private void userCreateEvent(String ename, String lname, String loname, String dname, String time, String desIn, String parti, String fTime)  {
         Connection dbconn = DBConnection.connectDB("events"); 
         //user_extended memb = new user_extended();
         //String user_Fname = memb.users.get(0).Fname ; 
@@ -404,17 +402,15 @@ public class EventCreator extends javax.swing.JFrame {
             st.setString(5, time);
             st.setString(6, desIn); 
             st.setString(7, parti); 
-            st.setString(8, l2name);
+            st.setString(8, lname);
             st.setString(9, fTime);
 
             int res = st.executeUpdate(); 
             JOptionPane.showMessageDialog(this, "User data inserted", "Success", JOptionPane.INFORMATION_MESSAGE); 
 
             eventName.setText("") ;
-            leaderName.setText(""); 
             locateName.setText("");
             dateN.setText("");
-            //timeN.setText("");
             hourBox.setSelectedIndex(0);
             minuteBox.setSelectedIndex(0);
             descriptInput.setText("");
@@ -429,11 +425,6 @@ public class EventCreator extends javax.swing.JFrame {
 }
     
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
-        
-        //user_extended memb = new user_extended();
-        //String user_Fname = memb.users.get(0).Fname ; 
-        
         String hour = hourBox.getSelectedItem().toString();
         String minute = minuteBox.getSelectedItem().toString();
         String time = hour+":"+minute;
@@ -441,20 +432,21 @@ public class EventCreator extends javax.swing.JFrame {
         String fTime = date +" "+hour+":"+minute;
         
         String EName = eventName.getText();
-        String LName = leaderName.getText();
-        String L2Name = leaderName.getText();
         String LoName = locateName.getText();
         String DName = dateN.getText();
-        //String TName = timeN.getText();
         String DesInput = descriptInput.getText();
-        String PNo = participantNo.getText();     
-             
+        String PNo = participantNo.getText();  
         
-        if(EName.isEmpty() || LName.isEmpty() || LoName.isEmpty() || DName.isEmpty() || time.isEmpty() || PNo.isEmpty()|| DesInput.isEmpty())
+        user_extended u = new user_extended();
+        
+        
+        
+        if(EName.isEmpty() || LoName.isEmpty() || DName.isEmpty() || time.isEmpty() || PNo.isEmpty()|| DesInput.isEmpty())
             JOptionPane.showMessageDialog(this, "Please fill all information properly","Error", JOptionPane.ERROR_MESSAGE) ;
         else {
-            userCreateEvent(EName,LName,LoName,DName,time,DesInput,PNo,L2Name,fTime); 
+            userCreateEvent(EName,u.users.get(0).Fname,LoName,DName,time,DesInput,PNo,fTime); 
         } 
+    //GEN-LAST:event_createButtonActionPerformed
     }                                            
 
     private void descriptInputActionPerformed(java.awt.event.ActionEvent evt) {                                              
@@ -508,7 +500,6 @@ public class EventCreator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -516,7 +507,6 @@ public class EventCreator extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField leaderName;
     private javax.swing.JTextField locateName;
     public static javax.swing.JComboBox<String> minuteBox;
     private Home.PanelRound panelRound1;
