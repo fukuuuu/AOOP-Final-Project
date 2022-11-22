@@ -22,6 +22,8 @@ public class Regis_F extends javax.swing.JFrame {
      */
     public Regis_F() {
         initComponents();
+        setSize(950, 520);
+        setLocation(500, 250);
         setLocationRelativeTo(null);
     }
 
