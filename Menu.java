@@ -25,7 +25,26 @@ public class Menu extends javax.swing.JFrame {
         setLocation(500, 250);
         con = DBConnection.connectDB("eventdb");
         showEventsTable();
+        eventEli();
     }
+    
+    public void eventEli() { 
+    Date dt = new Date();
+    SimpleDateFormat dateFormat;
+    dateFormat = new SimpleDateFormat("MMMM dd, yyyy kk:mm");
+    Connection dbconn = DBConnection.connectDB("events");
+    try {
+        String query = "delete from eventdetails where fullTime = ?";
+        PreparedStatement preparedStmt = dbconn.prepareStatement(query);
+        preparedStmt.setString(1, dateFormat.format(dt));
+
+        // execute the preparedstatement
+        int row = preparedStmt.executeUpdate();
+
+    } catch (Exception e) {
+        System.out.println(e.getMessage()); 
+    }
+}
 
     public void showEventsTable() {
         //Use formats from database
